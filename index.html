@@ -74,17 +74,11 @@
             navigator.mediaDevices
               .enumerateDevices()
               .then((devices) => {
-                document.getElementById('defaultMic').value = devices[0].label;
+                //document.getElementById('defaultMic').value = devices[0].label;
                 devices.every((device) => {
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audioinput")
                   { document.getElementById('defaultMic').value = device.label;
-                   return false;}
-                });
-                devices.every((device) => {
-                  console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-                  if (device.kind == "audiooutput")
-                  { document.getElementById('defaultSpeak').value = device.label;
                    return false;}
                 });
               })
