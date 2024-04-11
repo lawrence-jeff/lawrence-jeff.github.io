@@ -75,17 +75,17 @@
               .enumerateDevices()
               .then((devices) => {
                 document.getElementById('defaultMic').value = devices[0].label;
-                devices.forEach((device) => {
+                devices.every((device) => {
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-                  if (device.kind = "audioinput")
+                  if (device.kind == "audioinput")
                   { document.getElementById('defaultMic').value = device.label;
-                   break;}
+                   return false;}
                 });
-                devices.forEach((device) => {
+                devices.every((device) => {
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-                  if (device.kind = "audiooutput")
+                  if (device.kind == "audiooutput")
                   { document.getElementById('defaultSpeak').value = device.label;
-                   break;}
+                   return false;}
                 });
               })
               .catch((err) => {
