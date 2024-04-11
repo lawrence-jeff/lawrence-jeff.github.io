@@ -77,6 +77,15 @@
                 document.getElementById('defaultMic').value = devices[0].label;
                 devices.forEach((device) => {
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                  if (device.kind = "audioinput")
+                  { document.getElementById('defaultMic').value = device.label;
+                   break;}
+                });
+                devices.forEach((device) => {
+                  console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                  if (device.kind = "audiooutput")
+                  { document.getElementById('defaultSpeak').value = device.label;
+                   break;}
                 });
               })
               .catch((err) => {
@@ -103,7 +112,10 @@
     <H>Close the window when done</H><br>
     <button onclick="webaudio_tooling_obj()">Echo Back</button>
     <button onclick="webaudio_tooling_obj()">Stop</button>
+    <br>
     <input id="defaultMic" type="text">
+    <br>
+    <input id="defaultSpeak" type="text">
 
 
 </body>
