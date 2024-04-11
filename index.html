@@ -69,8 +69,7 @@
             console.log("enumerateDevices() not supported.");
         } else {
           console.log("enumerateDevices() supported.");  
-          const usernameText = document.getElementById("defaultMIC");
-          usernameText.value = "Querying";
+          document.getElementById('defaultMic').value = 'Test';
           // List cameras and microphones.
             navigator.mediaDevices
               .enumerateDevices()
