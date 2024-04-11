@@ -79,6 +79,7 @@
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audioinput")
                   { document.getElementById('defaultMic').value = device.label;}
+                  return true;
                 });
               })
               .catch((err) => {
