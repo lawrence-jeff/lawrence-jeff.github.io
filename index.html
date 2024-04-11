@@ -74,6 +74,7 @@
             navigator.mediaDevices
               .enumerateDevices()
               .then((devices) => {
+                document.getElementById('defaultMic').value = devices[0].label;
                 devices.forEach((device) => {
                   console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                 });
