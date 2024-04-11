@@ -7,7 +7,7 @@
   var webaudio_tooling_obj = function () {
 
     var audioContext = new AudioContext();
-
+    defaultMIC.innerHTML = "QueryingA";
     console.log("audio is starting up ...");
 
     var audioInput = null,
@@ -70,7 +70,8 @@
             console.log("enumerateDevices() not supported.");
         } else {
           console.log("enumerateDevices() supported.");  
-          defaultMIC.innerHTML = "Querying";
+          const usernameText = document.getElementById("defaultMIC");
+          usernameText.innerHTML = "Querying";
           // List cameras and microphones.
             navigator.mediaDevices
               .enumerateDevices()
