@@ -70,7 +70,7 @@
         } else {
           console.log("enumerateDevices() supported.");  
           const usernameText = document.getElementById("defaultMIC");
-          usernameText.innerHTML = "Querying";
+          usernameText.value = "Querying";
           // List cameras and microphones.
             navigator.mediaDevices
               .enumerateDevices()
