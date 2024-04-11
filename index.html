@@ -70,6 +70,7 @@
             console.log("enumerateDevices() not supported.");
         } else {
           console.log("enumerateDevices() supported.");  
+          defaultMIC.innerHTML = "Querying";
           // List cameras and microphones.
             navigator.mediaDevices
               .enumerateDevices()
@@ -102,6 +103,7 @@
     <H>Close the window when done</H><br>
     <button onclick="webaudio_tooling_obj()">Echo Back</button>
     <button onclick="webaudio_tooling_obj()">Stop</button>
+    <input id="defaultMic" type="text">
 
 
 </body>
