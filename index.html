@@ -76,15 +76,21 @@
               .then((devices) => {
                 //document.getElementById('defaultMic').value = devices[0].label;
                 devices.every((device) => {
-                  console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                  //console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audioinput")
-                  { document.getElementById('defaultMic').value = device.label;
-                  return false;}else {return true;}
+                  {
+                    console.log(`AWSCHECKERMIC:${device.kind}`);
+                    document.getElementById('defaultMic').value = device.label;
+                    return false;
+                  }else {
+                    return true;
+                  }
                 });
                 devices.every((device) => {
-                  console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                  //console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audiooutput")
                   { document.getElementById('defaultSpeak').value = device.label;
+                    console.log(`AWSCHECKERSPEAK:${device.kind}`);
                   return false;}else {return true;}
                 });
               })
