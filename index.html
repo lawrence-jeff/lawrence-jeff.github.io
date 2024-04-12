@@ -79,7 +79,7 @@
                   //console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audioinput")
                   {
-                    console.log(`AWSCHECKERMIC:${device.kind}`);
+                    console.log(`AWSCHECKERMIC:${device.label}`);
                     document.getElementById('defaultMic').value = device.label;
                     return false;
                   }else {
@@ -90,7 +90,7 @@
                   //console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                   if (device.kind == "audiooutput")
                   { document.getElementById('defaultSpeak').value = device.label;
-                    console.log(`AWSCHECKERSPEAK:${device.kind}`);
+                    console.log(`AWSCHECKERSPEAK:${device.label}`);
                   return false;}else {return true;}
                 });
               })
@@ -116,12 +116,12 @@
 <body> 
     <H>Click Echo Back, accept any prompts and then speak into the microphone, you should hear your test message back after a short delay</H><br>
     <H>Close the window when done</H><br>
-    <button onclick="webaudio_tooling_obj()">Echo Back</button>
-    <button onclick="webaudio_tooling_obj()">Stop</button>
     <br>Mic:
     <input id="defaultMic" type="text" maxlength="80">
     <br>Speaker:
     <input id="defaultSpeak" type="text" maxlength="80">
+     <br>
+     <button onclick="webaudio_tooling_obj()">Test</button>
 
 
 </body>
